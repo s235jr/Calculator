@@ -1,5 +1,7 @@
 
 import junit.framework.Assert;
+import operations.*;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -7,15 +9,12 @@ import java.util.List;
 
 class CalculatorTest {
 
-
     @Test
     void countResult1() {
         List<Computable> computationList = new ArrayList<Computable>();
-        computationList.add(new Computation("add", 2));
-        computationList.add(new Computation("multiply", 3));
-
-        computationList.add(new Computation("apply", 10));
-
+        computationList.add(new Addition(2));
+        computationList.add(new Multiplication(3));
+        computationList.add(new Apply( 10));
 
         Calculator c = new Calculator();
         double result = c.compute(computationList);
@@ -26,9 +25,9 @@ class CalculatorTest {
     void countResult2() {
 
         List<Computable> computationList = new ArrayList<Computable>();
-        computationList.add(new Computation("multiply", 3));
-        computationList.add(new Computation("add", 2));
-        computationList.add(new Computation("apply", 10));
+        computationList.add(new Multiplication(3));
+        computationList.add(new Addition(2));
+        computationList.add(new Apply( 10));
 
         Calculator c = new Calculator();
         double result = c.compute(computationList);
@@ -38,7 +37,7 @@ class CalculatorTest {
     @Test
     void countResult3() {
         List<Computable> computationList = new ArrayList<Computable>();
-        computationList.add(new Computation("apply", 10));
+        computationList.add(new Apply( 10));
 
         Calculator c = new Calculator();
         double result = c.compute(computationList);

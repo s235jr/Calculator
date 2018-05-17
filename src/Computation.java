@@ -1,4 +1,4 @@
-import java.util.List;
+import operations.Computable;
 
 public class Computation implements Computable {
 
@@ -13,17 +13,13 @@ public class Computation implements Computable {
     public Computation() {
     }
 
-    public double countResult(double input) {
+    public double compute(double input) {
 
         switch (operator) {
-            case "add":
-                return input + value;
             case "subtrack":
                 return input - value;
             case "divide":
                 return input / value;
-            case "multiply":
-                return input * value;
             case "apply":
                     return value;
             default:

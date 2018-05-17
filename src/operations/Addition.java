@@ -1,3 +1,5 @@
+package operations;
+
 public class Addition implements Computable {
 
     private int value;
@@ -6,7 +8,8 @@ public class Addition implements Computable {
         this.value = value;
     }
 
-    public double countResult(double input) {
+    @Override
+    public double compute(double input) {
         return input + value;
     }
 }
