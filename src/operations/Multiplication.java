@@ -1,6 +1,7 @@
 package operations;
 
 public class Multiplication implements Computable {
+
     private int value;
 
     public Multiplication(int value) {
